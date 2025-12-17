@@ -1,0 +1,9 @@
+.venv/
+A1_manager/
+Cellpose-Kit/
+__pycache__/
+.vscode/
+CellTinder/
+CP_server/
+Progress_bar/
+.ipynb_checkpoints/

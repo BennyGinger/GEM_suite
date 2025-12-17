@@ -1,0 +1,17 @@
+[tool.uv.workspace]
+members = [
+  "A1_manager",
+  "Cellpose-kit",
+  "CellTinder",
+  "CP_server",
+  "GEM_Screening",
+  "Progress_bar",
+]
+exclude = ["ImageAnalysis_pipeline"]
+
+[tool.uv.sources]
+a1-manager = { workspace = true }
+celltinder = { workspace = true }
+progress-bar = { workspace = true }
+cp-server = { workspace = true }
+cellpose-kit = { workspace = true }
