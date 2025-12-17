@@ -7,7 +7,6 @@ members = [
   "GEM_Screening",
   "Progress_bar",
 ]
-exclude = ["ImageAnalysis_pipeline"]
 
 [tool.uv.sources]
 a1-manager = { workspace = true }
