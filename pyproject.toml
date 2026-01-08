@@ -3,7 +3,7 @@ members = [
   "A1_manager",
   "Cellpose-kit",
   "CellTinder",
-  "CP_server",
+  "cp_server",
   "GEM_Screening",
   "Progress_bar",
 ]

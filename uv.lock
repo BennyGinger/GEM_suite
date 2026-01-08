@@ -382,7 +382,7 @@ wheels = [
 [[package]]
 name = "cp-server"
 version = "0.5.1"
-source = { editable = "CP_server" }
+source = { editable = "cp_server" }
 dependencies = [
     { name = "celery" },
     { name = "dotenv" },
@@ -739,7 +739,7 @@ dependencies = [
 requires-dist = [
     { name = "a1-manager", editable = "A1_manager" },
     { name = "celltinder", editable = "CellTinder" },
-    { name = "cp-server", editable = "CP_server" },
+    { name = "cp-server", editable = "cp_server" },
     { name = "progress-bar", editable = "Progress_bar" },
     { name = "pydantic", specifier = ">=2.11.6" },
     { name = "pyqt6", specifier = ">=6.9.1" },
