@@ -3,7 +3,7 @@ members = [
   "A1_manager",
   "Cellpose-kit",
   "CellTinder",
-  "cp_server",
+  "CP_server",
   "GEM_Screening",
   "Progress_bar",
 ]
@@ -12,10 +12,5 @@ members = [
 a1-manager = { workspace = true }
 celltinder = { workspace = true }
 progress-bar = { workspace = true }
-cp-server = { workspace = true }
+cp_server = { workspace = true }
 cellpose-kit = { workspace = true }
-
-[dependency-groups]
-dev = [
-    "cellpose[gui]>=3.1.1.2",
-]

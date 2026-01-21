@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = "==3.12.*"
 resolution-markers = [
     "sys_platform == 'darwin'",
@@ -16,9 +16,6 @@ members = [
     "gem-screening",
     "progress-bar",
 ]
-
-[manifest.dependency-groups]
-dev = [{ name = "cellpose", extras = ["gui"], specifier = ">=3.1.1.2" }]
 
 [[package]]
 name = "a1-manager"
@@ -171,15 +168,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/72/7b/4294a848f2ad6c03a5402d550598c6028ac1837eee89cf08b8a798638a65/cellpose-3.1.1.2.tar.gz", hash = "sha256:b7f092ba9c94676ae06444adbcdc3813771a190c354cbafe48acff0f9f43597a", size = 23333247, upload-time = "2025-05-02T22:17:55.052Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e3/81/9938c72a3a106ee9f36709b61e6b9e321a46a02f12281fbe808308ff20bb/cellpose-3.1.1.2-py3-none-any.whl", hash = "sha256:02466651e5670eabe766932405ce49503bc2424b7c03744cad1ffd9d6773db67", size = 226232, upload-time = "2025-05-02T22:17:52.315Z" },
-]
-
-[package.optional-dependencies]
-gui = [
-    { name = "pyqt6" },
-    { name = "pyqt6-sip" },
-    { name = "pyqtgraph" },
-    { name = "qtpy" },
-    { name = "superqt" },
 ]
 
 [[package]]
@@ -384,7 +372,7 @@ wheels = [
 [[package]]
 name = "cp-server"
 version = "0.5.1"
-source = { editable = "cp_server" }
+source = { editable = "CP_server" }
 dependencies = [
     { name = "celery" },
     { name = "dotenv" },
@@ -726,7 +714,7 @@ wheels = [
 
 [[package]]
 name = "gem-screening"
-version = "0.1.0"
+version = "1.3.1"
 source = { editable = "GEM_Screening" }
 dependencies = [
     { name = "a1-manager" },
@@ -737,15 +725,23 @@ dependencies = [
     { name = "pyqt6" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "a1-manager", editable = "A1_manager" },
     { name = "celltinder", editable = "CellTinder" },
-    { name = "cp-server", editable = "cp_server" },
+    { name = "cp-server", editable = "CP_server" },
     { name = "progress-bar", editable = "Progress_bar" },
     { name = "pydantic", specifier = ">=2.11.6" },
     { name = "pyqt6", specifier = ">=6.9.1" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=8.4.2" }]
 
 [[package]]
 name = "h11"
@@ -1752,18 +1748,6 @@ wheels = [
 ]
 
 [[package]]
-name = "pyqtgraph"
-version = "0.14.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "colorama" },
-    { name = "numpy" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/32/36/4c242f81fdcbfa4fb62a5645f6af79191f4097a0577bd5460c24f19cc4ef/pyqtgraph-0.14.0-py3-none-any.whl", hash = "sha256:7abb7c3e17362add64f8711b474dffac5e7b0e9245abdf992e9a44119b7aa4f5", size = 1924755, upload-time = "2025-11-16T19:43:22.251Z" },
-]
-
-[[package]]
 name = "pyserial"
 version = "3.5"
 source = { registry = "https://pypi.org/simple" }
@@ -1889,18 +1873,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/e6/2f/104c0a3c778d7c2ab8190e9db4f62f0b6957b53c9d87db77c284b69f33ea/pyzmq-27.1.0-cp312-abi3-win32.whl", hash = "sha256:250e5436a4ba13885494412b3da5d518cd0d3a278a1ae640e113c073a5f88edd", size = 559184, upload-time = "2025-09-08T23:08:15.163Z" },
     { url = "https://files.pythonhosted.org/packages/fc/7f/a21b20d577e4100c6a41795842028235998a643b1ad406a6d4163ea8f53e/pyzmq-27.1.0-cp312-abi3-win_amd64.whl", hash = "sha256:9ce490cf1d2ca2ad84733aa1d69ce6855372cb5ce9223802450c9b2a7cba0ccf", size = 619480, upload-time = "2025-09-08T23:08:17.192Z" },
     { url = "https://files.pythonhosted.org/packages/78/c2/c012beae5f76b72f007a9e91ee9401cb88c51d0f83c6257a03e785c81cc2/pyzmq-27.1.0-cp312-abi3-win_arm64.whl", hash = "sha256:75a2f36223f0d535a0c919e23615fc85a1e23b71f40c7eb43d7b1dedb4d8f15f", size = 552993, upload-time = "2025-09-08T23:08:18.926Z" },
-]
-
-[[package]]
-name = "qtpy"
-version = "2.4.3"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "packaging" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/70/01/392eba83c8e47b946b929d7c46e0f04b35e9671f8bb6fc36b6f7945b4de8/qtpy-2.4.3.tar.gz", hash = "sha256:db744f7832e6d3da90568ba6ccbca3ee2b3b4a890c3d6fbbc63142f6e4cdf5bb", size = 66982, upload-time = "2025-02-11T15:09:25.759Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/69/76/37c0ccd5ab968a6a438f9c623aeecc84c202ab2fabc6a8fd927580c15b5a/QtPy-2.4.3-py3-none-any.whl", hash = "sha256:72095afe13673e017946cc258b8d5da43314197b741ed2890e563cf384b51aa1", size = 95045, upload-time = "2025-02-11T15:09:24.162Z" },
 ]
 
 [[package]]
@@ -2120,20 +2092,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/de/1a/608df0b10b53b0beb96a37854ee05864d182ddd4b1156a22f1ad3860425a/starlette-0.49.3.tar.gz", hash = "sha256:1c14546f299b5901a1ea0e34410575bc33bbd741377a10484a54445588d00284", size = 2655031, upload-time = "2025-11-01T15:12:26.13Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a3/e0/021c772d6a662f43b63044ab481dc6ac7592447605b5b35a957785363122/starlette-0.49.3-py3-none-any.whl", hash = "sha256:b579b99715fdc2980cf88c8ec96d3bf1ce16f5a8051a7c2b84ef9b1cdecaea2f", size = 74340, upload-time = "2025-11-01T15:12:24.387Z" },
-]
-
-[[package]]
-name = "superqt"
-version = "0.7.7"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "pygments" },
-    { name = "qtpy" },
-    { name = "typing-extensions" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/fd/b2/2b06351d40efed91b3b090b37af226c4f9aba7731fdc0b3f8329928e6316/superqt-0.7.7.tar.gz", hash = "sha256:09945c56cc9e2d1fc46196da3e8a39e855eb8303563a12893fcb992299d35f1d", size = 107544, upload-time = "2025-12-27T18:25:25.332Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/e3/52/90990e0ad11526f6ffdfc55bd6707ba2b93a7df4c1e96ec9f8e572dbd6aa/superqt-0.7.7-py3-none-any.whl", hash = "sha256:23f5e88a8b58f5dca8f6763d17380425a95cda6ca217b24440e8f822412ddb75", size = 100565, upload-time = "2025-12-27T18:25:23.742Z" },
 ]
 
 [[package]]
