@@ -1,3 +1,4 @@
+# Archived GEM_suite workspace; GEM_Screening is the active project.
 [tool.uv.workspace]
 members = [
   "A1_manager",
